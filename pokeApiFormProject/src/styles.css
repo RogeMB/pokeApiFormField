@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  box-sizing: border-box;
+  background: url(assets/img/pokemonBackg.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+  font-family: 'pokeSolid', Roboto, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+@font-face {
+  font-family: 'pokeHollow' ;
+  src: url(assets/font/pokemon/PokemonHollow.ttf);
+}
+
+@font-face {
+  font-family: 'pokeSolid';
+  src: url(assets/font/pokemon/PokemonSolid.ttf);
+}
+

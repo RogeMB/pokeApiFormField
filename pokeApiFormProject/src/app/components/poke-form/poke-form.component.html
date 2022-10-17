@@ -1,0 +1,21 @@
+<nav class="text-center d-flex">
+  <div class="container-fluid">
+    <img
+    src="../../../assets/img/pokeApi.png"
+
+    alt="Poke API logo"
+    class="w-100vh mb-5"
+  />
+  </div>
+</nav>
+
+<div class="bg-white w-25 justify-content text-center ms-5 d-flex rounded" >
+  <mat-form-field appearance="fill" class="w-100 align-items-center " style="font-family: 'pokeSolid';">
+    <mat-label>¡Pokemons!</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let pokemon of pokemonList" value="pokemon" (click)="getPokemonInfo(pokemon)">{{pokemon.name}}</mat-option>
+    </mat-select>
+    <mat-hint align="end">Elige tu pokemon preferido</mat-hint>
+  </mat-form-field>
+</div>
+

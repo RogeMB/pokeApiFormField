@@ -1,0 +1,9 @@
+<h1 mat-dialog-title class="text-center fw-bold">Nombre: {{data.pokemonInfo.name}}</h1>
+<div mat-dialog-content>
+  <ul>
+    <li>Peso: {{data.pokemonInfo.weight}}</li>
+    <li>Especie: {{data.pokemonInfo.species.name}}</li>
+  </ul>
+<div mat-dialog-actions class="d-grid text-center" >
+  <button mat-button mat-dialog-close cdkFocusInitial class="btn btn-primary">Ok</button>
+</div>
