@@ -12,8 +12,12 @@ import { PokemonDialogComponent } from './pokemon-dialog/pokemon-dialog.componen
 })
 export class PokeFormComponent implements OnInit {
 
+  currentPokeImg!: string;
+ 
   pokemonList: Pokemon[] = [];
-  pokemonSelected: PokeDetail | undefined;
+  pokemonSelected!: PokeDetail;
+  chekeo: boolean = false;
+  pokemonFav: string [] = [];
 
   constructor(private pokemonService: PokeService, public dialog: MatDialog) { }
 
@@ -26,13 +30,14 @@ export class PokeFormComponent implements OnInit {
 
   getPhotoUrl(pokemon: Pokemon) {
     let id = pokemon.url.split("/").reverse()[1];
-    debugger;
-    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
+    this.currentPokeImg = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
+    return this.currentPokeImg;
   }
 
   getPokemonInfo(pokemon: Pokemon) {
     this.pokemonService.getPokemonUrl(pokemon).subscribe(response => {
       this.pokemonSelected = response;
+      this.chekeo = true;
       this.dialog.open(PokemonDialogComponent, {
         width: '500px',
         height: 'auto',
@@ -46,4 +51,9 @@ export class PokeFormComponent implements OnInit {
     });
   }
 
+  addPokemonFav (newPokeFav: string) {
+    if(!this.pokemonFav.includes(newPokeFav)) {
+        this.pokemonFav.push(newPokeFav);
+    }
+  }
 }

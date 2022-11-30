@@ -1,5 +1,6 @@
 <h1 mat-dialog-title class="text-center fw-bold">Nombre: {{data.pokemonInfo.name}}</h1>
 <div mat-dialog-content>
+  <img [src]="currentPokeImg" alt="Imagen pokemon">
   <ul>
     <li>Peso: {{data.pokemonInfo.weight}}</li>
     <li>Especie: {{data.pokemonInfo.species.name}}</li>

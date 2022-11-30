@@ -6,13 +6,15 @@ import { PokeFormComponent } from './components/poke-form/poke-form.component';
 import { ImportsMaterialModule } from 'src/imports-material/imports-material.module';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { PokemonDialogComponent } from './components/poke-form/pokemon-dialog/pokemon-dialog.component';
+import { PokemonComponent } from './components/pokemon/pokemon.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PokeFormComponent,
     PageNotFoundComponent,
-    PokemonDialogComponent
+    PokemonDialogComponent,
+    PokemonComponent
   ],
   imports: [
     ImportsMaterialModule,

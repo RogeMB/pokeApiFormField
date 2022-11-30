@@ -1,21 +1,41 @@
-<nav class="text-center d-flex">
-  <div class="container-fluid">
-    <img
-    src="../../../assets/img/pokeApi.png"
+<div class="container-fluid">
+  <nav class="text-center d-flex">
+    <div class="container-fluid">
+      <img
+        src="../../../assets/img/pokeApi.png"
+        alt="Poke API logo"
+        class="w-100vh mb-5"
+      />
+    </div>
+  </nav>
 
-    alt="Poke API logo"
-    class="w-100vh mb-5"
-  />
+  <div class="bg-white w-25 justify-content text-center ms-5 d-flex rounded">
+    <mat-form-field
+      appearance="fill"
+      class="w-100 align-items-center"
+      style="font-family: 'pokeSolid'"
+    >
+      <mat-label>¡Pokemons!</mat-label>
+      <mat-select>
+        <mat-option
+          *ngFor="let pokemon of pokemonList"
+          value="pokemon"
+          (click)="getPokemonInfo(pokemon)">{{ pokemon.name }}</mat-option
+        >
+      </mat-select>
+      <mat-hint align="end">Elige tu pokemon preferido</mat-hint>
+    </mat-form-field>
   </div>
-</nav>
+  <div class="bg-white fs-2 fw-bold w-50 text-center float-end rounded customText">
+    <p class="m-5 text-start fs-3 fw-bold customText">Favoritos:</p>
+    <ul class="list-group list-group-numbered list-group-flush customText">
+      <li class="list-group-item list-group-item-info" *ngFor="let poke of pokemonFav">{{ poke }}</li>
+    </ul>
+  </div>
+  <div>
+    <p class="m-5 fs-3 text-light fw-bold">Pokemon elegido:</p>
+    <app-pokemon *ngIf="chekeo" [pokemon]="pokemonSelected" (newPokemonEvent)="addPokemonFav($event)"></app-pokemon>
+  </div>  
 
-<div class="bg-white w-25 justify-content text-center ms-5 d-flex rounded" >
-  <mat-form-field appearance="fill" class="w-100 align-items-center " style="font-family: 'pokeSolid';">
-    <mat-label>¡Pokemons!</mat-label>
-    <mat-select>
-      <mat-option *ngFor="let pokemon of pokemonList" value="pokemon" (click)="getPokemonInfo(pokemon)">{{pokemon.name}}</mat-option>
-    </mat-select>
-    <mat-hint align="end">Elige tu pokemon preferido</mat-hint>
-  </mat-form-field>
+
 </div>
-

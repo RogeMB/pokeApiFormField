@@ -1,0 +1,10 @@
+<mat-card class="customSize">
+    <mat-card-header>
+    <mat-card-title class="fw-bold">{{pokemon.name.toUpperCase()}}</mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="getPhotoUrl()" alt="Photo of {{pokemon.name}}">
+    <mat-card-actions>
+    <button class="btn btn-primary" type="submit" (click)="addNewPokeFav(pokemon.name)">Añadir a favoritos</button>
+    </mat-card-actions>
+</mat-card>
